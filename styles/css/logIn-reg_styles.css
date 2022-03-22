@@ -16,6 +16,9 @@ img {
   height: 100%;
   object-fit: cover; }
 
+.red::placeholder {
+  color: red; }
+
 .main {
   width: 50%;
   height: 100%;
@@ -42,11 +45,11 @@ img {
 
 .logIn__div {
   width: 466px;
-  height: 583px;
+  height: 622px;
   z-index: 100;
   border-radius: 30px;
   background: #282b32;
-  padding: 66px; }
+  padding: 60px; }
 
 .logIn__header {
   display: flex;
@@ -59,7 +62,7 @@ img {
   margin: 0; }
 .form__welcome h2 {
   font-size: 68px;
-  margin: 25px 0; }
+  margin: 25px 0 0 0; }
 
 .form__reg-link span {
   display: block; }
@@ -69,18 +72,19 @@ img {
 
 .login-form label {
   display: block;
-  margin: 8% 0 2% 3%; }
+  margin: 5% 0 2% 0; }
 .login-form input {
   width: 90%;
   border-radius: 15px;
   border: #292b31 solid 1px;
+  margin-bottom: 70px;
   padding: 4% 5%;
   color: black;
   font-size: 16px; }
 
 .reg-form label {
   display: block;
-  margin: 5% 0 2% 3%; }
+  margin: 5% 0 2% 0; }
 .reg-form input {
   width: 90%;
   border-radius: 15px;
@@ -88,6 +92,15 @@ img {
   padding: 20px 20px;
   color: black;
   font-size: 16px; }
+.reg-form .form__name {
+  display: flex;
+  justify-content: space-between; }
+  .reg-form .form__name label {
+    width: 48%;
+    margin: 3% 0 0 0; }
+    .reg-form .form__name label input {
+      width: 80%;
+      margin-top: 3%; }
 .reg-form .form__password {
   display: flex;
   justify-content: space-between; }
@@ -102,7 +115,6 @@ img {
   border-radius: 15px;
   border: 0;
   width: 100%;
-  margin-top: 10%;
   padding: 4% 5%;
   text-align: center;
   text-decoration: none;
