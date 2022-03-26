@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <title>LogIn</title>
     <link rel="stylesheet" type="text/css" href="styles/css/logIn-reg_styles.css"/>
-    <link href = "font/stylesheet.css" rel = "stylesheet" type = "text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="font/stylesheet.css" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <main class="main">
     <div class="logIn__div">
         <div class="logIn__header">
             <div class="form__welcome">
-                <h1>Welcome to Ticket</h1>
+                <h1>Welcome to <a href="index.html">Ticket</a></h1>
                 <h2>Registration</h2>
             </div>
             <div class="form__reg-link">
@@ -20,8 +21,17 @@
             </div>
         </div>
         <form class="reg-form">
-            <label for="name">Enter your nickname</label>
-            <input id="name" type="text" placeholder="Nickname">
+            <label for="nickname">Enter your nickname</label>
+            <input id="nickname" type="text" placeholder="Nickname">
+            <div class="form__name">
+                <label for="name">Enter your name
+                    <input id="name" type="text" placeholder="Name">
+                </label>
+
+                <label for="surname">Enter your surname
+                    <input id="surname" type="text" placeholder="Surname">
+                </label>
+            </div>
             <label for="email">Enter your email</label>
             <input id="email" type="email" placeholder="Email">
             <div class="form__password">
@@ -33,11 +43,13 @@
                     <input id="repeat_pass" type="password" placeholder="Repeat you password">
                 </label>
             </div>
-            <button class="btn" type="submit">Log In</button>
+            <button class="btn" type="submit">Registration</button>
         </form>
     </div>
     <div class="left__picture"><img src="images/header-bg.png" alt=""></div>
     <div class="right__picture"><img src="images/dancer.png" alt=""></div>
 </main>
+
+<script src="scripts/registration.js"></script>
 </body>
 </html>

@@ -15,6 +15,10 @@ img{
   object-fit: cover;
 }
 
+.red::placeholder{
+  color: red;
+}
+
 .main{
   width: 50%;
   height: 100%;
@@ -51,13 +55,13 @@ img{
 
 .logIn__div{
   width: 466px;
-  height: 583px;
+  height: 622px;
   z-index: 100;
 
   border-radius: 30px;
   background: #282b32;
 
-  padding: 66px;
+  padding: 60px;
 }
 
 .logIn__header{
@@ -75,7 +79,7 @@ img{
 
   h2{
     font-size: 68px;
-    margin: 25px 0;
+    margin: 25px 0 0 0;
   }
 }
 
@@ -92,7 +96,7 @@ img{
 .login-form{
   label{
     display: block;
-    margin: 8% 0 2% 3% ;
+    margin: 5% 0 2% 0;
   }
 
   input{
@@ -101,6 +105,7 @@ img{
     border-radius: 15px;
     border: #292b31 solid 1px;
 
+    margin-bottom: 70px;
     padding: 4% 5%;
     color: black;
     font-size: 16px;
@@ -110,7 +115,7 @@ img{
 .reg-form{
   label{
     display: block;
-    margin: 5% 0 2% 3% ;
+    margin: 5% 0 2% 0 ;
   }
 
   input{
@@ -122,6 +127,21 @@ img{
     padding: 20px 20px;
     color: black;
     font-size: 16px;
+  }
+
+  .form__name{
+    display: flex;
+    justify-content: space-between;
+    label{
+      width: 48%;
+      margin: 3% 0 0 0;
+      input{
+        width: 80%;
+        margin-top: 3%;
+
+      }
+    }
+
   }
 
   .form__password{
@@ -145,7 +165,6 @@ img{
   border: 0;
 
   width: 100%;
-  margin-top: 10%;
   padding: 4% 5%;
 
   text-align: center;
