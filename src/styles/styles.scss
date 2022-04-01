@@ -1,0 +1,29 @@
+body{
+  background: #191b20;
+  font-family: Muller, serif;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.btn {
+  border-radius: 40px;
+  border: #292b31 solid 1px;
+
+  padding: 15px 50px 15px 50px;
+
+  text-align: center;
+  text-decoration: none;
+  color: white;
+
+  transition: all .4s ease-in-out;
+
+}
+
+.img-div {
+  overflow: hidden;
+}

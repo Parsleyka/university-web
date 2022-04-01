@@ -1,0 +1,111 @@
+@import "../../styles/mixins";
+
+.main{
+  margin-top: 10vh;
+}
+
+.logIn__div{
+  margin: 0 auto;
+  padding: 3%;
+
+  width: 50%;
+  z-index: 100;
+
+  border-radius: 30px;
+  background: #282b32;
+
+  color: white;
+}
+
+.logIn__header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__welcome{
+
+  h1{
+    @include gradient-text;
+
+    margin: 0;
+  }
+
+  h2{
+    font-size: 68px;
+    margin: 25px 0 0 0;
+  }
+}
+
+.form__reg-link{
+  span{
+    display: block;
+  }
+  a{
+    text-decoration: none;
+    color: orangered;
+  }
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  label{
+    width: 100%;
+    float: left;
+    display: block;
+    margin: 5% 0 2% 0;
+  }
+
+  input{
+    width: 95%;
+
+    border-radius: 15px;
+    border: #292b31 solid 1px;
+
+    padding: 20px 20px;
+    color: black;
+    font-size: 16px;
+  }
+}
+
+.btn{
+  border-radius: 15px;
+  border: 0;
+
+  width: 100%;
+  padding: 4% 5%;
+  margin-top: 10%;
+
+  background-image: linear-gradient(to right,#e75516, #ef9d43, #fc6076, #ff9a44);
+  background-size: 300% 100%;
+}
+
+.btn:hover{
+  background-position: 100% 0;
+}
+
+@media screen and (max-width: 992px){
+  .logIn__div{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .logIn__div{
+    width: 92%;
+    background: #191b20;
+  }
+
+  .form__reg-link{
+    display: none;
+  }
+
+  .login-form{
+    input {
+      width: 90%;
+    }
+  }
+}
+
+

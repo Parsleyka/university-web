@@ -1,0 +1,70 @@
+@import "../../styles/mixins";
+
+.instruction {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  color: white;
+}
+
+.instruction-step {
+  background: #282b32;
+  height: 130px;
+
+  display: flex;
+  align-items: center;
+
+  hr {
+    width: 30px;
+    border: #FFC6194D solid 1px;
+  }
+}
+
+.instruction-step:nth-child(2n) {
+  background: #202124;
+}
+
+.instruction__img {
+  @include gradient-text;
+
+  font-size: 45px;
+  margin: 15px;
+}
+
+.instruction__tip {
+  margin-left: 15px;
+}
+
+.instruction__icon {
+  @include gradient-text;
+}
+
+@media screen and (max-width: 992px) {
+  .instruction {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .instruction-step:nth-child(2) {
+    background: #282b32;
+  }
+
+  .instruction-step:nth-child(1) {
+    background: #202124;
+  }
+  .instruction-step:nth-child(4) {
+    background: #202124;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .instruction {
+    grid-template-columns: 1fr;
+  }
+
+  .instruction-step:nth-child(1) {
+    background: #282b32;
+  }
+
+  .instruction-step:nth-child(2n) {
+    background: #202124;
+  }
+}

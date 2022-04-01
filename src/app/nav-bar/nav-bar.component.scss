@@ -1,0 +1,64 @@
+@import "../../styles/mixins";
+
+.navbar{
+  height: 50px;
+}
+
+.list{
+  padding: 0;
+  margin: 25px 0 45px 0;
+  list-style: none;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 18px;
+}
+
+.nav__title{
+  text-decoration: none;
+
+  @include gradient-text;
+
+  margin: 0;
+  font-size: 47px;
+  font-weight: 700;
+}
+
+.nav__element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__icon{
+  height: 20px;
+  filter: invert(100%);
+}
+
+.nav__btn:hover {
+  color: black;
+  background: white;
+  transition: all .4s ease-in-out;
+}
+
+@media screen and (max-width: 768px){
+  .nav__location{
+    display: none;
+  }
+  .nav__phone{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .navbar{
+    margin: 0 2%;
+  }
+
+  .nav__btn{
+    padding: 20px;
+  }
+}
+

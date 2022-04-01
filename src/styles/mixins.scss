@@ -1,0 +1,17 @@
+@mixin gradient-text {
+  background-image: linear-gradient(90deg, rgba(234,66,42,1) 0%, rgba(255,198,25,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin body-style{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+
+  background: $main-bg-color;
+
+  font-family: Muller, serif;
+  color: white;
+}
