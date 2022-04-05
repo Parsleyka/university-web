@@ -1,0 +1,52 @@
+<main class="main">
+  <div class="user__div">
+    <div class="user__header">
+      <div class="user__welcome">
+        <h1>Hello {{user.nickname}}</h1>
+        <h2>Personal data</h2>
+      </div>
+    </div>
+    <div class="personal-data">
+      <form [formGroup]="form" (submit)="submit()">
+        <ul class="personal-data__list">
+          <li class="personal-data__item">
+            <label class="personal-data__label" for="nickname">Nickname</label>
+            <p *ngIf="!isEditable" class="personal-data__value">{{user.nickname}}</p>
+            <input class="personal-data__input" *ngIf="isEditable" formControlName="nickname" id="nickname" type="text"
+                   value="{{user.nickname}}">
+          </li>
+          <li class="personal-data__item">
+            <label class="personal-data__label" for="name">Name</label>
+            <p *ngIf="!isEditable" class="personal-data__value">{{user.name}}</p>
+            <input class="personal-data__input" *ngIf="isEditable" formControlName="name" id="name" type="text"
+                   value="{{user.name}}">
+          </li>
+          <li class="personal-data__item">
+            <label class="personal-data__label" for="surname">Surname</label>
+            <p *ngIf="!isEditable" class="personal-data__value">{{user.surname}}</p>
+            <input class="personal-data__input" *ngIf="isEditable" formControlName="surname" id="surname" type="text"
+                   value="{{user.surname}}">
+          </li>
+          <li class="personal-data__item">
+            <label class="personal-data__label" for="email">email</label>
+            <p *ngIf="!isEditable" class="personal-data__value">{{user.email}}</p>
+            <input class="personal-data__input" *ngIf="isEditable" formControlName="email" id="email" type="text"
+                   value="{{user.email}}">
+          </li>
+        </ul>
+        <div *ngIf="!isEditable" class="personal-data__footer">
+          <button class="btn" (click)="changeEditableState()">Edit</button>
+        </div>
+        <div *ngIf="isEditable" class="personal-data__footer">
+          <button class="btn" type="submit" [ngStyle]="{
+          'width': '45%'
+        }">Apply</button>
+          <button class="btn" (click)="changeEditableState()" [ngStyle]="{
+          'width': '45%'
+        }">Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

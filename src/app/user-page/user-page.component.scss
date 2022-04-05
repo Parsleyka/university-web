@@ -1,0 +1,93 @@
+@import "../../styles/mixins";
+
+.main{
+  margin-top: 4vh;
+}
+
+.user__div{
+  margin: 0 auto;
+  padding: 3%;
+
+  width: 50%;
+  z-index: 100;
+
+  border-radius: 30px;
+  background: #282b32;
+
+  color: white;
+}
+
+.user__header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.user__welcome{
+  margin-bottom: 6%;
+
+  h1{
+    @include gradient-text;
+
+    margin: 0;
+  }
+
+  h2{
+    font-size: 68px;
+    margin: 25px 0 0 0;
+  }
+}
+
+.personal-data__list{
+  list-style: none;
+}
+
+.personal-data__item{
+  margin-bottom: 7%;
+}
+
+.personal-data__label{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #797878;
+}
+
+.personal-data__input{
+  width: 83%;
+
+  border-radius: 15px;
+  border: #292b31 solid 1px;
+
+  padding: 16px 16px;
+  color: black;
+  font-size: 16px;
+}
+
+.personal-data__value{
+  font-size: 24px;
+  margin-top: 2%;
+}
+
+.personal-data__footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn{
+  border-radius: 15px;
+  border: 0;
+
+  font-size: 23px;
+  font-weight: 700;
+
+  width: 100%;
+  padding: 3% 0;
+  margin-top: 1%;
+
+  background-image: linear-gradient(to right,#e75516, #ef9d43, #fc6076, #ff9a44);
+  background-size: 300% 100%;
+}
+
+.btn:hover{
+  background-position: 100% 0;
+}

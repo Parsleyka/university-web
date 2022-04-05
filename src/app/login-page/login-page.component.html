@@ -10,11 +10,11 @@
         <a routerLinkActive="active" routerLink="/reg">Registration</a>
       </div>
     </div>
-    <form class="login-form">
+    <form class="login-form" [formGroup]="form" (submit)="submit()">
       <label for="email">Enter your email</label>
-      <input id="email" type="email" placeholder="Email">
+      <input formControlName="email" id="email" type="email" placeholder="Email">
       <label for="password">Enter your password</label>
-      <input id="password" type="password" placeholder="Password">
+      <input formControlName="password" id="password" type="password" placeholder="Password">
       <button class="btn" type="submit">Log In</button>
     </form>
   </div>

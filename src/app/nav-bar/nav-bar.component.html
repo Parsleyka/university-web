@@ -11,6 +11,13 @@
       <img class="nav__icon" src="assets/img/icons/location.png" alt="location">
       <span>Lviv</span>
     </li>
-    <li class="nav__element"><a class="btn nav__btn" routerLinkActive="active" routerLink="/login">LOG IN</a></li>
+    <li *ngIf="!authenticated" class="nav__element">
+      <a *ngIf="url !== '/login' " class="btn nav__btn" routerLinkActive="active" routerLink="/login">LOG IN</a>
+      <a *ngIf="url === '/login' " class="btn nav__btn" routerLinkActive="active" routerLink="/reg">REGISTRATION</a>
+    </li>
+    <li *ngIf="authenticated" class="nav__element">
+      <a class="btn nav__btn" routerLinkActive="active" routerLink="/user">PROFILE</a>
+      <a class="btn nav__btn" (click)="logout()">LOG OUT</a>
+    </li>
   </ul>
 </nav>
