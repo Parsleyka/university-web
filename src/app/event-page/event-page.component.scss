@@ -1,0 +1,131 @@
+@import "../../styles/mixins";
+
+* {
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+body {
+  color: #555;
+  background: #222;
+  text-align: center;
+  padding: 1em;
+}
+
+.wrapper{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  text-shadow: 1px 1px 10px black;
+}
+
+h2 {
+  @include gradient-text;
+  font-weight: 600;
+}
+
+.btn{
+  padding: 10px 20px;
+  margin: 1em 2em;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.btn:hover {
+  color: black;
+  background: white;
+  transition: all .4s ease-in-out;
+}
+
+
+// base
+.flip {
+  position: relative;
+  >.front,
+  >.back {
+    display: block;
+    transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
+    transition-duration: .5s;
+    transition-property: transform, opacity;
+  }
+  >.front {
+    transform: rotateY(0deg);
+  }
+  >.back {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transform: rotateY(-180deg);
+  }
+  &:hover {
+    >.front {
+      transform: rotateY(180deg);
+    }
+    >.back {
+      opacity: 1;
+      transform: rotateY(0deg);
+    }
+  }
+  &.flip-vertical {
+    >.back {
+      transform: rotateX(-180deg);
+    }
+    &:hover {
+      >.front {
+        transform: rotateX(180deg);
+      }
+      >.back {
+        transform: rotateX(0deg);
+      }
+    }
+  }
+}
+
+// custom
+.flip {
+  position: relative;
+  display: inline-block;
+  width: 32%;
+  height: 100%;
+
+  margin-bottom: 2%;
+  >.front,
+  >.back {
+    display: block;
+    color: white;
+    background-size: cover!important;
+    background-position: center!important;
+    width: 100%;
+    height: 250px;
+    padding: 1em 2em;
+    background: #313131;
+    border-radius: 10px;
+    p {
+      font-size: 0.9125rem;
+      line-height: 160%;
+      color: #999;
+    }
+  }
+}
+
+@media screen and (max-width: 992px){
+  .flip {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .flip {
+    width: 100%;
+  }
+}

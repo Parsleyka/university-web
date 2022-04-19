@@ -5,6 +5,7 @@
         <h1>Hello {{user.nickname}}</h1>
         <h2>Personal data</h2>
       </div>
+      <a (click)="showTickets()" class="btn my-ticket-btn">MY TICKETS</a>
     </div>
     <div class="personal-data">
       <form [formGroup]="form" (submit)="submit()">
@@ -40,7 +41,8 @@
         <div *ngIf="isEditable" class="personal-data__footer">
           <button class="btn" type="submit" [ngStyle]="{
           'width': '45%'
-        }">Apply</button>
+        }">Apply
+          </button>
           <button class="btn" (click)="changeEditableState()" [ngStyle]="{
           'width': '45%'
         }">Cancel
@@ -50,3 +52,5 @@
     </div>
   </div>
 </main>
+<app-ticket-list *ngIf="this.isDisplayTicket" (isDisplayTicket)="close()"></app-ticket-list>
+

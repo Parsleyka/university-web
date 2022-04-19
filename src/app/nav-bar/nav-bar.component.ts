@@ -30,7 +30,19 @@ export class NavBarComponent implements OnInit {
       }
     )
 
-    this.location.onUrlChange((path)=>{this.url = path;})
+    this.checkAuth();
+
+    this.location.onUrlChange((path) => {
+      this.url = path;
+    })
+  }
+
+  checkAuth(){
+    if(this.cookie.getAuthToken()){
+      Emitters.authEmitter.emit(true);
+    }else {
+      Emitters.authEmitter.emit(false);
+    }
   }
 
   logout(): void {

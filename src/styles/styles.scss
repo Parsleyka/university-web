@@ -15,6 +15,8 @@ img {
 }
 
 .btn {
+  cursor: pointer;
+
   border-radius: 40px;
   border: #292b31 solid 1px;
 
@@ -25,5 +27,4 @@ img {
   color: white;
 
   transition: all .4s ease-in-out;
-
 }

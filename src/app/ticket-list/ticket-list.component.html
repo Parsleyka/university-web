@@ -1,0 +1,35 @@
+<div *ngIf="isTickets" (click)="close($event)" class="wrapper">
+  <section *ngIf="usersTicketsInfo.length || tickets.length" class="content">
+
+  <ul *ngIf="pageLink === '/events'" class="ticket__list">
+    <ng-container *ngFor="let ticket of this.tickets">
+      <li *ngIf="ticket.status === true" class="ticket grid4">
+        <span>{{ticket.id}}</span>
+        <span class="event-name">{{event.name}}</span>
+        <span>{{event.date | date:'medium'}}</span>
+        <span>{{ticket.price}} UAH</span>
+        <a *ngIf="isShowBuyBtn" (click)="buyTicket(ticket.id, $event)" class="btn buy-btn">BUY TICKET</a>
+      </li>
+    </ng-container>
+  </ul>
+
+
+  <ul *ngIf="pageLink === '/user'" class="ticket__list">
+    <ng-container *ngFor="let ticket of usersTicketsInfo">
+      <li class="ticket grid3">
+        <span>{{ticket.ticket_id}}</span>
+        <span class="event-name">{{ticket.event_name}}</span>
+        <span>{{ticket.event_date | date:'medium'}}</span>
+        <span>{{ticket.price}} UAH</span>
+      </li>
+    </ng-container>
+  </ul>
+
+  </section>
+
+  <section *ngIf="!usersTicketsInfo.length && !tickets.length" class="content">
+    <div class="no-ticket">
+      <p class="no-ticket">There are no tickets</p>
+    </div>
+  </section>
+</div>

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CookieService} from "../services/cookie.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
@@ -10,10 +10,13 @@ import {Router} from "@angular/router";
   styleUrls: ['./user-page.component.scss']
 })
 export class UserPageComponent implements OnInit {
-  API: string = 'http://127.0.0.1:5000';
+  @Input() isDisplayTicket = false;
+
+  readonly API: string = 'http://127.0.0.1:5000';
+  private authToken: string = '';
   isEditable: boolean = false;
   form: FormGroup = {} as FormGroup;
-  idToken: string = '';
+
 
   user: {
     nickname: string,
@@ -39,14 +42,26 @@ export class UserPageComponent implements OnInit {
     })
   }
 
+  showTickets():void{
+    if(!this.cookie.getAuthToken()) {
+      alert("You should be logged")
+      return
+    }
+    this.isDisplayTicket = true;
+  }
+
+  close():void{
+    this.isDisplayTicket = false;
+  }
+
   changeEditableState(): void {
     this.isEditable = !this.isEditable;
   }
 
   submit(): void {
-    this.idToken = this.cookie.getAuthToken();
+    this.authToken = this.cookie.getAuthToken();
     this.http.put(this.API + '/user/update', this.form.getRawValue(), {
-      headers: { "Authorization": "Bearer " + this.idToken}
+      headers: { "Authorization": "Bearer " + this.authToken}
     }).subscribe({
       next: ()=>{
         this.user = this.form.getRawValue();

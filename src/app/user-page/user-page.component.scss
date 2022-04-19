@@ -4,6 +4,25 @@
   margin-top: 4vh;
 }
 
+.btn{
+  border-radius: 15px;
+  border: 0;
+
+  font-size: 23px;
+  font-weight: 700;
+
+  width: 100%;
+  padding: 3% 0;
+  margin-top: 1%;
+
+  background-image: linear-gradient(to right,#e75516, #ef9d43, #fc6076, #ff9a44);
+  background-size: 300% 100%;
+}
+
+.btn:hover{
+  background-position: 100% 0;
+}
+
 .user__div{
   margin: 0 auto;
   padding: 3%;
@@ -24,6 +43,7 @@
 
 .user__welcome{
   margin-bottom: 6%;
+  width: 70%;
 
   h1{
     @include gradient-text;
@@ -35,6 +55,14 @@
     font-size: 68px;
     margin: 25px 0 0 0;
   }
+}
+
+.my-ticket-btn{
+  width: 125px;
+  height: 16px;
+
+  font-size: 18px;
+  font-weight: normal;
 }
 
 .personal-data__list{
@@ -71,23 +99,4 @@
 .personal-data__footer{
   display: flex;
   justify-content: space-between;
-}
-
-.btn{
-  border-radius: 15px;
-  border: 0;
-
-  font-size: 23px;
-  font-weight: 700;
-
-  width: 100%;
-  padding: 3% 0;
-  margin-top: 1%;
-
-  background-image: linear-gradient(to right,#e75516, #ef9d43, #fc6076, #ff9a44);
-  background-size: 300% 100%;
-}
-
-.btn:hover{
-  background-position: 100% 0;
 }
